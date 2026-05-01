@@ -1,0 +1,111 @@
+version: 1
+events:
+  - name: "automation.run.started"
+    description: "An automation run has started."
+    topic: "automation"
+    payloadSchema: "schemas/payloadsautomation/run.started.schema.json"
+
+  - name: "automation.run.completed"
+    description: "An automation run has completed."
+    topic: "automation"
+    payloadSchema: "schemas/payloadsautomation/run.completed.schema.json"
+
+  - name: "automation.run.failed"
+    description: "An automation run has failed."
+    topic: "automation"
+    payloadSchema: "schemas/payloadsautomation/run.failed.schema.json"
+
+  - name: "monitoring.alert.opened"
+    description: "A monitoring alert transitioned to an opened state."
+    topic: "monitoring"
+    payloadSchema: "schemas/payloadsmonitoring/alert.opened.schema.json"
+
+  - name: "monitoring.alert.resolved"
+    description: "A monitoring alert transitioned to a resolved state."
+    topic: "monitoring"
+    payloadSchema: "schemas/payloadsmonitoring/alert.resolved.schema.json"
+
+  - name: "membership.user.added"
+    description: "A user was added to a domain entity."
+    topic: "membership"
+    payloadSchema: "schemas/payloadsmembership/user.added.schema.json"
+
+  - name: "membership.user.removed"
+    description: "A user was removed from a domain entity."
+    topic: "membership"
+    payloadSchema: "schemas/payloadsmembership/user.removed.schema.json"
+
+  - name: "membership.user.role-changed"
+    description: "A user's role or permissions were changed in a domain entity."
+    topic: "membership"
+    payloadSchema: "schemas/payloadsmembership/user.role-changed.schema.json"
+
+  - name: "membership.team.added"
+    description: "A team was added to a domain entity."
+    topic: "membership"
+    payloadSchema: "schemas/payloadsmembership/team.added.schema.json"
+
+  - name: "membership.team.removed"
+    description: "A team was removed from a domain entity."
+    topic: "membership"
+    payloadSchema: "schemas/payloadsmembership/team.removed.schema.json"
+
+  - name: "membership.team.role-changed"
+    description: "A team's role or permissions were changed in a domain entity."
+    topic: "membership"
+    payloadSchema: "schemas/payloadsmembership/team.role-changed.schema.json"
+
+  - name: "agent.instance.provisioned"
+    description: "An agent or runner instance was provisioned."
+    topic: "agent"
+    payloadSchema: "schemas/payloadsagent/instance.provisioned.schema.json"
+
+  - name: "agent.instance.ready"
+    description: "An agent or runner instance is ready to accept work."
+    topic: "agent"
+    payloadSchema: "schemas/payloadsagent/instance.ready.schema.json"
+
+  - name: "agent.instance.job-accepted"
+    description: "An agent or runner instance accepted a job."
+    topic: "agent"
+    payloadSchema: "schemas/payloadsagent/instance.job-accepted.schema.json"
+
+  - name: "agent.instance.job-released"
+    description: "An agent or runner instance released a job and returned to idle."
+    topic: "agent"
+    payloadSchema: "schemas/payloadsagent/instance.job-released.schema.json"
+
+  - name: "agent.instance.stopping"
+    description: "An agent or runner instance began graceful shutdown."
+    topic: "agent"
+    payloadSchema: "schemas/payloadsagent/instance.stopping.schema.json"
+
+  - name: "agent.instance.stopped"
+    description: "An agent or runner instance was fully deprovisioned."
+    topic: "agent"
+    payloadSchema: "schemas/payloadsagent/instance.stopped.schema.json"
+
+  - name: "agent.instance.replaced"
+    description: "An agent or runner instance was replaced with a clean instance."
+    topic: "agent"
+    payloadSchema: "schemas/payloadsagent/instance.replaced.schema.json"
+
+  - name: "agent.instance.failed"
+    description: "An agent or runner instance failed unexpectedly."
+    topic: "agent"
+    payloadSchema: "schemas/payloadsagent/instance.failed.schema.json"
+
+  - name: "autoscaler.pool.scaled-out"
+    description: "Pool capacity increased based on queue depth."
+    topic: "autoscaler"
+    payloadSchema: "schemas/payloadsautoscaler/pool.scaled-out.schema.json"
+
+  - name: "autoscaler.pool.scaled-in"
+    description: "Pool capacity decreased based on queue depth."
+    topic: "autoscaler"
+    payloadSchema: "schemas/payloadsautoscaler/pool.scaled-in.schema.json"
+
+  - name: "autoscaler.queue.depth-changed"
+    description: "Queue depth changed and may have triggered autoscaler evaluation."
+    topic: "autoscaler"
+    payloadSchema: "schemas/payloadsautoscaler/queue.depth-changed.schema.json"
