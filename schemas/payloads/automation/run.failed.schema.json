@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Automation Run Failed Event Payload",
+  "description": "Payload schema for an event that is emitted when an automation run has failed",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "runId",
+    "resource",
+    "status",
+    "startTime",
+    "endTime",
+    "errors"
+  ],
+  "properties": {
+    "runId": {
+      "type": "string",
+      "description": "Unique identifier for the automation run."
+    },
+    "resource": {
+      "type": "object",
+      "description": "The resource that the automation run is associated with.",
+      "required": [
+        "kind",
+        "id",
+        "name"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "description": "The kind of resource (e.g., 'github.workflow', 'azuredevops.pipeline')."
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The unique identifier of the resource."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The human-readable name of the resource."
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "failed"
+      ],
+      "description": "The final status of the automation run. Always 'failed' for this event."
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp when the automation run started (ISO 8601 format)."
+    },
+    "endTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp when the automation run completed (ISO 8601 format)."
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Optional list of warnings that were generated during the automation run. These are non-critical issues that did not cause the run to fail but may require attention.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "description": "A required list of errors that were generated during the automation run that contributed to the failure.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this event, such as diagnostics, exit codes, or API error details."
+    }
+  }
+}

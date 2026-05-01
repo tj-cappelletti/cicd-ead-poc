@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Automation Run Started Event Payload",
+  "description": "Payload schema for an event that is emitted when an automation run is started.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "runId",
+    "resource",
+    "trigger",
+    "startTime"
+  ],
+  "properties": {
+    "runId": {
+      "type": "string",
+      "description": "Unique identifier for the automation run."
+    },
+    "resource": {
+      "type": "object",
+      "description": "The resource that the automation run is associated with.",
+      "required": [
+        "kind",
+        "id",
+        "name"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "description": "The kind of resource (e.g., 'github.workflow', 'azuredevops.pipeline')."
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The unique identifier of the resource."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The human-readable name of the resource."
+        }
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "description": "Information about what triggered the automation run.",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "scheduled",
+            "event"
+          ],
+          "description": "The type of trigger that started the automation run. 'manual' indicates a user-initiated run, 'scheduled' indicates a run that was started by a timer or schedule, and 'event' indicates a run that was triggered by an external event (e.g., code push, pull request, etc.)."
+        },
+        "actor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The user or system that initiated the run, if applicable. For manual triggers, this might be the username of the person who started the run. For scheduled triggers, this might be null or a system identifier. For event triggers, this might be the user that caused the event."
+        },
+        "details": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Provider-specific details about the trigger event. For example, if the trigger type is 'event', this object might include information about the event that caused the run to start (e.g., commit ID, branch name, event source, etc.)."
+        }
+      }
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp when the automation run started (ISO 8601 format)."
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this event, such as diagnostics, execution context, or additional event details."
+    }
+  }
+}
