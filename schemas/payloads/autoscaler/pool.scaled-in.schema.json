@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/autoscaler/pool.scaled-in.schema.json",
+  "title": "Autoscaler Pool Scaled In Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "poolId",
+    "poolName",
+    "previousCapacity",
+    "newCapacity",
+    "idleInstanceCount",
+    "idleInstanceRemovedCount",
+    "idleInstanceMaxAgeMinutes"
+  ],
+  "properties": {
+    "poolId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the pool or runner group that was scaled in."
+    },
+    "poolName": {
+      "type": "string",
+      "description": "Display name of the pool or runner group."
+    },
+    "scalingDecisionId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional identifier for the scaling decision event, useful for correlating with related events."
+    },
+    "previousCapacity": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Optional previous capacity (total instance count) before scaling in."
+    },
+    "newCapacity": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Optional new capacity (total instance count) after scaling in."
+    },
+    "idleInstanceCount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of idle instances at the time of the scale-in operation."
+    },
+    "idleInstanceRemovedCount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of idle instances that were selected for deprovisioning during this scale-in operation."
+    },
+    "idleInstanceMaxAgeMinutes": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Maximum age in minutes of idle instances that were selected for deprovisioning during this scale-in operation."
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this scaling operation, such as autoscaler version, rule identifiers, or scaling algorithm details."
+    }
+  }
+}
