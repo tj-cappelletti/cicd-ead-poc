@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/monitoring/queue.depth-changed.schema.json",
+  "title": "Queue Depth Changed Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "poolId",
+    "poolName",
+    "previousDepth",
+    "currentDepth",
+    "depthDelta",
+    "highThreshold",
+    "lowThreshold",
+    "thresholdState"
+  ],
+  "properties": {
+    "poolId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the pool or runner group whose queue depth changed."
+    },
+    "poolName": {
+      "type": "string",
+      "description": "Display name of the pool or runner group."
+    },
+    "previousDepth": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Previous queue depth before the change."
+    },
+    "currentDepth": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Current queue depth for the pool."
+    },
+    "depthDelta": {
+      "type": "integer",
+      "description": "Change in queue depth (currentDepth - previousDepth). Positive indicates added jobs, negative indicates jobs were processed."
+    },
+    "highThreshold": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "High threshold used to determine alerting for queue depth pressure."
+    },
+    "lowThreshold": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Low threshold used to determine recovery or low-water alerting."
+    },
+    "thresholdState": {
+      "type": "string",
+      "enum": [
+        "above-high",
+        "between",
+        "below-low"
+      ],
+      "description": "Queue depth state relative to configured thresholds after this change."
+    },
+    "alertRecommended": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Indicates whether this queue depth update should trigger alerting workflows."
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this queue depth event, such as source of queue measurement, confidence level, or additional metrics."
+    }
+  }
+}
