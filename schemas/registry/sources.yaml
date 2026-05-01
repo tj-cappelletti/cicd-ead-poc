@@ -1,0 +1,37 @@
+version: 1
+sources:
+  - name: "azuredevops.agentpool"
+    owner: "cicd-tools"
+    description: "Events related to Azure DevOps agent pools."
+
+  - name: "azuredevops.membership"
+    owner: "cicd-tools"
+    description: "Events related to Azure DevOps organization, project, and repository membership changes."
+
+  - name: "azuredevops.pipeline"
+    owner: "cicd-tools"
+    description: "Events related to Azure DevOps pipelines."
+
+  - name: "blackduck.availability"
+    owner: "cicd-tools"
+    description: "Events related to Black Duck availability."
+
+  - name: "github.automation"
+    owner: "cicd-tools"
+    description: "Events that come from GitHub automation built by the CI/CD Tools team."
+
+  - name: "github.membership"
+    owner: "cicd-tools"
+    description: "Events related to GitHub organization and repository membership changes."
+
+  - name: "github.repository"
+    owner: "cicd-tools"
+    description: "Events related to GitHub repository changes such as creation, deletion, and updates."
+
+  - name: "github.runner"
+    owner: "cicd-tools"
+    description: "Events related to GitHub Actions runners."
+
+  - name: "github.workflow"
+    owner: "cicd-tools"
+    description: "Events related to GitHub workflows."
