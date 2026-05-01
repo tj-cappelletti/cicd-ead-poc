@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/agent/instance.replaced.schema.json",
+  "title": "Agent Instance Replaced Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "poolId",
+    "instanceId",
+    "replacementInstanceId"
+  ],
+  "properties": {
+    "poolId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the pool or runner group."
+    },
+    "poolName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Display name of the pool or runner group."
+    },
+    "instanceId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the instance being replaced."
+    },
+    "instanceName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Display name or hostname for the instance being replaced."
+    },
+    "replacementInstanceId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the replacement instance."
+    },
+    "replacementInstanceName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Display name or hostname for the replacement instance."
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this lifecycle event, such as reimage reason or host migration context."
+    }
+  }
+}

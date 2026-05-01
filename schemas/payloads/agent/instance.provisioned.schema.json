@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/agent/instance.provisioned.schema.json",
+  "title": "Agent Instance Provisioned Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "poolId",
+    "instanceId"
+  ],
+  "properties": {
+    "poolId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the pool or runner group."
+    },
+    "poolName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Display name of the pool or runner group."
+    },
+    "instanceId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the newly provisioned agent or runner instance."
+    },
+    "instanceName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Display name or hostname for the instance."
+    },
+    "imageReference": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Image reference or version used to create the instance."
+    },
+    "requestedBy": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Service or actor that initiated provisioning."
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this lifecycle event, such as Azure DevOps agent capabilities or GitHub runner labels."
+    }
+  }
+}

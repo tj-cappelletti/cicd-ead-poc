@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/agent/instance.job-accepted.schema.json",
+  "title": "Agent Instance Job Accepted Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "poolId",
+    "instanceId",
+    "jobId"
+  ],
+  "properties": {
+    "poolId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the pool or runner group."
+    },
+    "poolName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Display name of the pool or runner group."
+    },
+    "instanceId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier of the agent or runner instance that accepted the job."
+    },
+    "instanceName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Display name or hostname for the instance."
+    },
+    "jobId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Provider-specific identifier for the accepted job."
+    },
+    "queueDepth": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Queue depth observed when the job was accepted, if available."
+    },
+    "queueWaitMs": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Time in milliseconds that the job waited in queue before acceptance, if available."
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this lifecycle event, such as workflow/run identifiers or pipeline context."
+    }
+  }
+}
