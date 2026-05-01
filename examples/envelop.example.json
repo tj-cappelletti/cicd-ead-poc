@@ -1,0 +1,40 @@
+{
+  "correlationId": "mon:azuredevops.agentpool:prod-linux:offline-percent>50",
+  "messageId": "123e4567-e89b-12d3-a456-426614174000",
+  "eventType": "monitoring.alert.opened",
+  "source": "azuredevops.agentpool",
+  "specVersion": "1.0",
+  "schemaVersion": "1.0",
+  "importance": "high",
+  "timestamp": "2026-04-21T13:45:30Z",
+  "payload": {
+    "alertId": "agentpool:prod-linux:offline-percent>50",
+    "resource": {
+      "kind": "azuredevops.agentpool",
+      "id": "prod-linux",
+      "name": "Production Linux Agent Pool"
+    },
+    "condition": {
+      "name": "Offline Agent Percentage Threshold Exceeded",
+      "type": "threshold",
+      "metric": "offline-percent",
+      "operator": ">",
+      "threshold": 50,
+      "observed": 15,
+      "aggregation": "average",
+      "timeWindow": "5m"
+    },
+    "details": {
+      "description": "The percentage of offline agents in the Production Linux Agent Pool has exceeded the threshold of 50%.",
+      "potentialImpacts": [
+        "Build and deployment pipelines may experience delays or failures due to insufficient available agents.",
+        "Critical workloads may be impacted, leading to potential SLA breaches."
+      ],
+      "recommendedActions": [
+        "Investigate the cause of offline agents (e.g., hardware issues, network problems, maintenance).",
+        "Consider adding more agents to the pool or redistributing workloads to other pools if possible.",
+        "Monitor the situation closely and set up additional alerts if necessary."
+      ]
+    }
+  }
+}
