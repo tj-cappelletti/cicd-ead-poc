@@ -9,21 +9,22 @@
   "timestamp": "2026-04-21T13:45:30Z",
   "payload": {
     "alertId": "agentpool:prod-linux:offline-percent>50",
+    "alertType": "agent.pool.capacity.exhausted",
     "resource": {
-      "kind": "azuredevops.agentpool",
+      "kind": "agent-pool",
       "id": "prod-linux",
       "name": "Production Linux Agent Pool"
     },
     "condition": {
       "name": "Offline Agent Percentage Threshold Exceeded",
-      "type": "threshold",
       "metric": "offline-percent",
-      "operator": ">",
+      "operator": "gt",
       "threshold": 50,
-      "observed": 15,
-      "aggregation": "average",
-      "timeWindow": "5m"
+      "observed": 75,
+      "aggregation": "avg",
+      "windowMinutes": 5
     },
+    "openedTimestamp": "2026-04-21T13:45:30Z",
     "details": {
       "description": "The percentage of offline agents in the Production Linux Agent Pool has exceeded the threshold of 50%.",
       "potentialImpacts": [
