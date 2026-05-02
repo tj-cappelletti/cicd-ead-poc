@@ -1,0 +1,135 @@
+{
+  "UserConfig": {
+    "Namespaces": [
+      {
+        "Name": "cicd-ead-demo",
+        "Queues": [],
+        "Topics": [
+          {
+            "Name": "automation",
+            "Properties": {
+              "DefaultMessageTimeToLive": "PT1H",
+              "DuplicateDetectionHistoryTimeWindow": "PT20S",
+              "RequiresDuplicateDetection": false,
+              "SupportOrdering": false
+            },
+            "Subscriptions": [
+              {
+                "Name": "generic-consumer",
+                "Properties": {
+                  "DeadLetteringOnFilterEvaluationExceptions": false,
+                  "DeadLetteringOnMessageExpiration": false,
+                  "DefaultMessageTimeToLive": "PT1H",
+                  "ForwardDeadLetteredMessagesTo": "",
+                  "ForwardTo": "",
+                  "LockDuration": "PT1M",
+                  "MaxDeliveryCount": 10,
+                  "RequiresSession": false
+                }
+              }
+            ]
+          },
+          {
+            "Name": "monitoring",
+            "Properties": {
+              "DefaultMessageTimeToLive": "PT1H",
+              "DuplicateDetectionHistoryTimeWindow": "PT20S",
+              "RequiresDuplicateDetection": false,
+              "SupportOrdering": false
+            },
+            "Subscriptions": [
+              {
+                "Name": "generic-consumer",
+                "Properties": {
+                  "DeadLetteringOnFilterEvaluationExceptions": false,
+                  "DeadLetteringOnMessageExpiration": false,
+                  "DefaultMessageTimeToLive": "PT1H",
+                  "ForwardDeadLetteredMessagesTo": "",
+                  "ForwardTo": "",
+                  "LockDuration": "PT1M",
+                  "MaxDeliveryCount": 10,
+                  "RequiresSession": false
+                }
+              }
+            ]
+          },
+          {
+            "Name": "agent",
+            "Properties": {
+              "DefaultMessageTimeToLive": "PT1H",
+              "DuplicateDetectionHistoryTimeWindow": "PT20S",
+              "RequiresDuplicateDetection": false,
+              "SupportOrdering": false
+            },
+            "Subscriptions": [
+              {
+                "Name": "generic-consumer",
+                "Properties": {
+                  "DeadLetteringOnFilterEvaluationExceptions": false,
+                  "DeadLetteringOnMessageExpiration": false,
+                  "DefaultMessageTimeToLive": "PT1H",
+                  "ForwardDeadLetteredMessagesTo": "",
+                  "ForwardTo": "",
+                  "LockDuration": "PT1M",
+                  "MaxDeliveryCount": 10,
+                  "RequiresSession": false
+                }
+              }
+            ]
+          },
+          {
+            "Name": "autoscaler",
+            "Properties": {
+              "DefaultMessageTimeToLive": "PT1H",
+              "DuplicateDetectionHistoryTimeWindow": "PT20S",
+              "RequiresDuplicateDetection": false,
+              "SupportOrdering": false
+            },
+            "Subscriptions": [
+              {
+                "Name": "generic-consumer",
+                "Properties": {
+                  "DeadLetteringOnFilterEvaluationExceptions": false,
+                  "DeadLetteringOnMessageExpiration": false,
+                  "DefaultMessageTimeToLive": "PT1H",
+                  "ForwardDeadLetteredMessagesTo": "",
+                  "ForwardTo": "",
+                  "LockDuration": "PT1M",
+                  "MaxDeliveryCount": 10,
+                  "RequiresSession": false
+                }
+              }
+            ]
+          },
+          {
+            "Name": "membership",
+            "Properties": {
+              "DefaultMessageTimeToLive": "PT1H",
+              "DuplicateDetectionHistoryTimeWindow": "PT20S",
+              "RequiresDuplicateDetection": false,
+              "SupportOrdering": false
+            },
+            "Subscriptions": [
+              {
+                "Name": "generic-consumer",
+                "Properties": {
+                  "DeadLetteringOnFilterEvaluationExceptions": false,
+                  "DeadLetteringOnMessageExpiration": false,
+                  "DefaultMessageTimeToLive": "PT1H",
+                  "ForwardDeadLetteredMessagesTo": "",
+                  "ForwardTo": "",
+                  "LockDuration": "PT1M",
+                  "MaxDeliveryCount": 10,
+                  "RequiresSession": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Logging": {
+      "Type": "File"
+    }
+  }
+}
