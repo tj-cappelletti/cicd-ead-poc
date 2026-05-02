@@ -1,0 +1,183 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://example.org/schemas/monitoring/alert.resolved.schema.json",
+	"title": "Monitoring Alert Resolved Payload",
+	"description": "Payload schema for an event that is emitted when a monitoring alert is resolved.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"alertId",
+		"alertType",
+		"resource",
+		"condition",
+		"resolvedTimestamp"
+	],
+	"properties": {
+		"alertId": {
+			"type": "string",
+			"minLength": 1,
+			"description": "Unique identifier for the alert that resolved."
+		},
+		"alertType": {
+			"type": "string",
+			"enum": [
+				"queue.depth.high",
+				"queue.depth.low",
+				"queue.depth.stalled",
+				"queue.latency.high",
+				"automation.run.failure-rate.high",
+				"automation.run.failure.consecutive",
+				"automation.run.duration.high",
+				"automation.run.missing-heartbeat",
+				"agent.pool.capacity.low",
+				"agent.pool.capacity.exhausted",
+				"agent.instance.failure-rate.high",
+				"agent.instance.unhealthy",
+				"agent.startup.duration.high",
+				"agent.replacement-rate.high",
+				"autoscaler.scale-out.saturation",
+				"autoscaler.scale-in.churn.high",
+				"autoscaler.decision.failed",
+				"membership.change.spike",
+				"membership.privilege-escalation.suspected",
+				"monitoring.pipeline.telemetry.gap",
+				"external.service.availability.degraded",
+				"external.service.availability.down",
+				"external.service.latency.high",
+				"external.service.error-rate.high",
+				"external.service.timeout.rate.high",
+				"external.integration.webhook.failure-rate.high",
+				"security.scan.duration.high",
+				"security.scan.queue.depth.high",
+				"security.scan.failure-rate.high",
+				"security.scan.missing-results",
+				"security.scan.api.throttled"
+			],
+			"description": "Canonical type of alert that resolved."
+		},
+		"resource": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": [
+				"kind",
+				"id",
+				"name"
+			],
+			"properties": {
+				"kind": {
+					"type": "string",
+					"minLength": 1,
+					"description": "Canonical resource kind associated with the alert (e.g., queue, agent-pool, external-service)."
+				},
+				"id": {
+					"type": "string",
+					"minLength": 1,
+					"description": "Stable identifier for the monitored resource."
+				},
+				"name": {
+					"type": "string",
+					"minLength": 1,
+					"description": "Display name of the monitored resource."
+				}
+			},
+			"description": "Monitored resource associated with the resolved alert."
+		},
+		"condition": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": [
+				"name",
+				"metric",
+				"operator",
+				"threshold",
+				"observed"
+			],
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "Human-readable name of the condition that triggered the alert."
+				},
+				"metric": {
+					"type": "string",
+					"minLength": 1,
+					"description": "Metric used to evaluate alert condition (e.g., queue-depth, latency-p95-ms, availability-percent)."
+				},
+				"operator": {
+					"type": "string",
+					"enum": [
+						"gt",
+						"gte",
+						"lt",
+						"lte",
+						"eq",
+						"neq"
+					],
+					"description": "Comparison operator used for threshold evaluation."
+				},
+				"threshold": {
+					"type": "number",
+					"description": "Configured threshold for the alert condition."
+				},
+				"observed": {
+					"type": "number",
+					"description": "Observed metric value when the alert resolved."
+				},
+				"aggregation": {
+					"type": [
+						"string",
+						"null"
+					],
+					"enum": [
+						"avg",
+						"max",
+						"min",
+						"sum",
+						null
+					],
+					"description": "Optional aggregation method used for the observed metric value (e.g., avg, sum, max, min)."
+				},
+				"windowMinutes": {
+					"type": [
+						"integer",
+						"null"
+					],
+					"minimum": 0,
+					"description": "Optional evaluation time window in minutes."
+				}
+			},
+			"description": "Condition that triggered the alert, provided for resolution context."
+		},
+		"resolvedTimestamp": {
+			"type": "string",
+			"format": "date-time",
+			"description": "RFC 3339 timestamp when the alert transitioned to resolved."
+		},
+		"openedTimestamp": {
+			"type": [
+				"string",
+				"null"
+			],
+			"format": "date-time",
+			"description": "Optional RFC 3339 timestamp when the alert originally opened."
+		},
+		"resolutionReason": {
+			"type": [
+				"string",
+				"null"
+			],
+			"enum": [
+				"condition-cleared",
+				"manual-close",
+				"suppressed",
+				"expired",
+				null
+			],
+			"description": "Optional normalized reason the alert transitioned to resolved."
+		},
+		"details": {
+			"type": "object",
+			"additionalProperties": true,
+			"description": "Provider-specific metadata for alert resolution context and diagnostics."
+		}
+	}
+}
