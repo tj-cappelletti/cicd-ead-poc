@@ -1,0 +1,21 @@
+{
+  "poolId": "prod-linux",
+  "poolName": "Production Linux Agent Pool",
+  "scalingDecisionId": "scale-20260421-00124",
+  "previousCapacity": 8,
+  "newCapacity": 5,
+  "idleInstanceCount": 4,
+  "idleInstanceRemovedCount": 3,
+  "idleInstanceMaxAgeMinutes": 45,
+  "details": {
+    "autoscalerVersion": "2.1.0",
+    "scalingRuleId": "idle-age-high",
+    "decisionTime": "2026-04-21T14:15:30Z",
+    "drainTimeoutSeconds": 300,
+    "removedInstanceIds": [
+      "agent-vm-006",
+      "agent-vm-007",
+      "agent-vm-008"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "alertId": "agentpool:prod-linux:offline-percent>50",
+  "alertType": "agent.pool.capacity.exhausted",
+  "resource": {
+    "kind": "agent-pool",
+    "id": "prod-linux",
+    "name": "Production Linux Agent Pool"
+  },
+  "condition": {
+    "name": "Offline Agent Percentage Threshold Exceeded",
+    "metric": "offline-percent",
+    "operator": "lt",
+    "threshold": 50,
+    "observed": 12,
+    "aggregation": "avg",
+    "windowMinutes": 5
+  },
+  "openedTimestamp": "2026-04-21T13:45:30Z",
+  "resolvedTimestamp": "2026-04-21T14:20:00Z",
+  "resolutionReason": "condition-cleared",
+  "details": {
+    "onlineAgents": 48,
+    "totalAgents": 50,
+    "recoveryActionApplied": "restarted 2 offline agents",
+    "alertDurationMinutes": 35
+  }
+}

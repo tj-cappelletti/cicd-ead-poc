@@ -1,0 +1,23 @@
+{
+  "runId": "run-20260421-00042",
+  "resource": {
+    "kind": "azuredevops.pipeline",
+    "id": "my-build-pipeline",
+    "name": "Production Build Pipeline"
+  },
+  "status": "succeeded",
+  "startTime": "2026-04-21T13:45:00Z",
+  "endTime": "2026-04-21T13:52:30Z",
+  "warnings": [
+    "Test coverage dropped below 75% threshold (current: 72%)",
+    "3 deprecated API calls detected in codebase"
+  ],
+  "errors": [],
+  "details": {
+    "projectName": "myapp",
+    "buildNumber": "20260421.1",
+    "requestedBy": "alice@contoso.com",
+    "completedStages": 5,
+    "totalStages": 5
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "poolId": "prod-linux",
+  "poolName": "Production Linux Agent Pool",
+  "instanceId": "agent-vm-003",
+  "instanceName": "agent-vm-003.contoso.com",
+  "failureCategory": "startup",
+  "failureMessage": "Agent startup timeout after 5 minutes. Diagnostics agent failed to initialize.",
+  "details": {
+    "vmId": "87654321-4321-4321-4321-210987654321",
+    "diagnosticLogs": "https://storage.azure.com/diagnostics/agent-vm-003.log",
+    "errorCode": "STARTUP_TIMEOUT_5MIN",
+    "lastHeartbeat": "2026-04-21T13:40:15Z"
+  }
+}

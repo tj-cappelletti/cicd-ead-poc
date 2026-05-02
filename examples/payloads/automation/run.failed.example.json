@@ -1,0 +1,25 @@
+{
+  "runId": "run-20260421-00043",
+  "resource": {
+    "kind": "github.workflow",
+    "id": "deploy.yml",
+    "name": "Deploy to Production"
+  },
+  "status": "failed",
+  "startTime": "2026-04-21T14:00:00Z",
+  "endTime": "2026-04-21T14:05:15Z",
+  "warnings": [
+    "2 deployments were skipped due to pre-deployment checks"
+  ],
+  "errors": [
+    "Database migration failed: foreign key constraint violation on users table",
+    "Container image push to registry timed out after 5 minutes",
+    "Health check failed for LoadBalancer endpoint"
+  ],
+  "details": {
+    "repository": "contoso/myapp",
+    "environment": "production",
+    "requestedBy": "bob@contoso.com",
+    "attemptNumber": 2
+  }
+}

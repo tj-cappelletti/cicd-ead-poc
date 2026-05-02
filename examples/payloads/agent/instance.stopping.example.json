@@ -1,0 +1,12 @@
+{
+  "poolId": "prod-linux",
+  "poolName": "Production Linux Agent Pool",
+  "instanceId": "agent-vm-001",
+  "instanceName": "agent-vm-001.contoso.com",
+  "stopReason": "scale-in",
+  "details": {
+    "scaleInTriggerId": "scale-20260421-00123",
+    "idleAgeMinutes": 45,
+    "drainTimeoutSeconds": 300
+  }
+}

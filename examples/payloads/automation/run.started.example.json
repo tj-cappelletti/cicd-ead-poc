@@ -1,0 +1,24 @@
+{
+  "runId": "run-20260421-00042",
+  "resource": {
+    "kind": "github.workflow",
+    "id": "build-test.yml",
+    "name": "Build and Test"
+  },
+  "trigger": {
+    "type": "event",
+    "actor": "alice@contoso.com",
+    "details": {
+      "eventType": "push",
+      "branch": "main",
+      "commitSha": "a1b2c3d4e5f6",
+      "commitMessage": "Add new feature for user authentication"
+    }
+  },
+  "startTime": "2026-04-21T13:45:00Z",
+  "details": {
+    "repository": "contoso/myapp",
+    "runNumber": 42,
+    "attempt": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "poolId": "prod-linux",
+  "poolName": "Production Linux Agent Pool",
+  "scalingDecisionId": "scale-20260421-00123",
+  "previousCapacity": 5,
+  "newCapacity": 8,
+  "instancesProvisioned": 3,
+  "queueDepth": 18,
+  "queueDepthThreshold": 15,
+  "details": {
+    "autoscalerVersion": "2.1.0",
+    "scalingRuleId": "queue-depth-high",
+    "decisionTime": "2026-04-21T13:45:30Z",
+    "provisioningTime": "2026-04-21T13:50:15Z"
+  }
+}

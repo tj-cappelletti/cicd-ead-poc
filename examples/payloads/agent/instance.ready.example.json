@@ -1,0 +1,16 @@
+{
+  "poolId": "prod-linux",
+  "poolName": "Production Linux Agent Pool",
+  "instanceId": "agent-vm-001",
+  "instanceName": "agent-vm-001.contoso.com",
+  "warmupDurationMs": 8500,
+  "details": {
+    "registrationTime": "2026-04-21T13:42:15Z",
+    "agentVersion": "2.224.1",
+    "systemCapabilities": {
+      "Agent.Version": "2.224.1",
+      "Agent.OS": "Linux",
+      "Agent.OSVersion": "Ubuntu 20.04.6 LTS"
+    }
+  }
+}

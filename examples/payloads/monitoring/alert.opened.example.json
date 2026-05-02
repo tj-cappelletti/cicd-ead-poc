@@ -1,0 +1,19 @@
+{
+  "poolId": "prod-linux",
+  "poolName": "Production Linux Agent Pool",
+  "previousDepth": 3,
+  "currentDepth": 0,
+  "depthDelta": -3,
+  "highThreshold": 12,
+  "lowThreshold": 2,
+  "thresholdState": "below-low",
+  "alertRecommended": false,
+  "details": {
+    "measurement": "azuredevops.agentpool.queue.depth",
+    "measurementTime": "2026-04-21T14:20:00Z",
+    "source": "azure-devops-service",
+    "confidence": 0.99,
+    "durationAboveHigh": 35,
+    "jobsProcessedInWindow": 18
+  }
+}

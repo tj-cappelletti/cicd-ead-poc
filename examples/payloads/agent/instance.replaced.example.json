@@ -1,0 +1,13 @@
+{
+  "poolId": "prod-linux",
+  "poolName": "Production Linux Agent Pool",
+  "instanceId": "agent-vm-001",
+  "instanceName": "agent-vm-001.contoso.com",
+  "replacementInstanceId": "agent-vm-002",
+  "replacementInstanceName": "agent-vm-002.contoso.com",
+  "details": {
+    "replacementReason": "host-maintenance",
+    "imageVersion": "ubuntu-20.04-lts-2026-04-v2",
+    "migrationStartTime": "2026-04-21T14:00:00Z"
+  }
+}

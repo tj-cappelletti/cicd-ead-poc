@@ -1,0 +1,15 @@
+{
+  "poolId": "prod-linux",
+  "poolName": "Production Linux Agent Pool",
+  "instanceId": "agent-vm-001",
+  "instanceName": "agent-vm-001.contoso.com",
+  "jobId": "run-20260421-00042",
+  "queueDepth": 3,
+  "queueWaitMs": 12500,
+  "details": {
+    "workflowName": "Build and Test",
+    "runNumber": 42,
+    "branch": "main",
+    "commitSha": "a1b2c3d4e5f6"
+  }
+}
