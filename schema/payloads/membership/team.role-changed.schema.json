@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/membership/team.role-changed.schema.json",
+  "title": "Membership Team Role Changed Payload",
+  "description": "Payload schema for an event emitted when a team's role changes in a domain entity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "resource",
+    "team",
+    "previousRole",
+    "newRole",
+    "changedTimestamp"
+  ],
+  "properties": {
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "id",
+        "name"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "description": "Domain entity where the team role change occurred."
+    },
+    "team": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "description": "Team whose role was changed."
+    },
+    "previousRole": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Role before the change."
+    },
+    "newRole": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Role after the change."
+    },
+    "changedBy": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Actor or service principal that initiated the role change."
+    },
+    "changedTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "RFC 3339 timestamp when the role change occurred."
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this membership event."
+    }
+  }
+}

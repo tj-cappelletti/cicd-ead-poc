@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/membership/team.added.schema.json",
+  "title": "Membership Team Added Payload",
+  "description": "Payload schema for an event emitted when a team is added to a domain entity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "resource",
+    "team",
+    "addedTimestamp"
+  ],
+  "properties": {
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "id",
+        "name"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "description": "Domain entity that received the team membership."
+    },
+    "team": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Stable team identifier in the provider system."
+        },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Provider slug or short name for the team."
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Display name of the team."
+        }
+      },
+      "description": "Team that was added."
+    },
+    "role": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Role assigned to the team at the time of addition, if available."
+    },
+    "addedBy": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Actor or service principal that initiated the membership change."
+    },
+    "addedTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "RFC 3339 timestamp when the team was added."
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Provider-specific metadata for this membership event."
+    }
+  }
+}
