@@ -1,0 +1,21 @@
+{
+  "resource": {
+    "kind": "repository",
+    "id": "gh:contoso/platform-api",
+    "name": "platform-api"
+  },
+  "user": {
+    "id": "github:884211",
+    "login": "jane.doe",
+    "displayName": "Jane Doe",
+    "email": "jane.doe@contoso.com"
+  },
+  "role": "maintainer",
+  "addedBy": "github.membership-sync",
+  "addedTimestamp": "2026-05-04T14:10:00Z",
+  "details": {
+    "provider": "github",
+    "organization": "contoso",
+    "requestId": "req-7f4fa1d3"
+  }
+}

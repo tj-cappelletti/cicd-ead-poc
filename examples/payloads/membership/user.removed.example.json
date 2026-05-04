@@ -1,0 +1,22 @@
+{
+  "resource": {
+    "kind": "project",
+    "id": "ado:project:payments-modernization",
+    "name": "payments-modernization"
+  },
+  "user": {
+    "id": "aad:24b4792e-8866-4a64-a751-226d31fbc0dd",
+    "login": "mark.smith",
+    "displayName": "Mark Smith",
+    "email": "mark.smith@contoso.com"
+  },
+  "previousRole": "contributor",
+  "reason": "offboarding",
+  "removedBy": "azuredevops.membership-service",
+  "removedTimestamp": "2026-05-04T15:22:30Z",
+  "details": {
+    "provider": "azuredevops",
+    "organization": "contoso-devops",
+    "ticket": "IAM-4821"
+  }
+}

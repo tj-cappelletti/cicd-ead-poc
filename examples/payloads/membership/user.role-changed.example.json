@@ -1,0 +1,22 @@
+{
+  "resource": {
+    "kind": "repository",
+    "id": "gh:contoso/infra-pipelines",
+    "name": "infra-pipelines"
+  },
+  "user": {
+    "id": "github:1773310",
+    "login": "sarah.lee",
+    "displayName": "Sarah Lee",
+    "email": "sarah.lee@contoso.com"
+  },
+  "previousRole": "triage",
+  "newRole": "admin",
+  "changedBy": "github.membership-automation",
+  "changedTimestamp": "2026-05-04T16:03:42Z",
+  "details": {
+    "provider": "github",
+    "changePolicy": "repo-owner-approved",
+    "approvalId": "apr-99172"
+  }
+}

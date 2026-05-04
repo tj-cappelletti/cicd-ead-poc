@@ -1,0 +1,21 @@
+{
+  "resource": {
+    "kind": "repository",
+    "id": "gh:contoso/service-catalog",
+    "name": "service-catalog"
+  },
+  "team": {
+    "id": "github-team:9982",
+    "slug": "security-ops",
+    "name": "Security Operations"
+  },
+  "previousRole": "triage",
+  "newRole": "maintain",
+  "changedBy": "github.membership-governance",
+  "changedTimestamp": "2026-05-04T19:02:00Z",
+  "details": {
+    "provider": "github",
+    "organization": "contoso",
+    "governanceRule": "security-team-minimum-maintain"
+  }
+}

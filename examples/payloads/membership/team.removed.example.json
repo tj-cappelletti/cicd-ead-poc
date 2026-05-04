@@ -1,0 +1,21 @@
+{
+  "resource": {
+    "kind": "project",
+    "id": "ado:project:legacy-retirement",
+    "name": "legacy-retirement"
+  },
+  "team": {
+    "id": "ado-team:88",
+    "slug": "legacy-admins",
+    "name": "Legacy Admins"
+  },
+  "previousRole": "administrator",
+  "reason": "project-closure",
+  "removedBy": "azuredevops.membership-cleanup",
+  "removedTimestamp": "2026-05-04T18:24:19Z",
+  "details": {
+    "provider": "azuredevops",
+    "organization": "contoso-devops",
+    "auditRecordId": "aud-20260504-119"
+  }
+}

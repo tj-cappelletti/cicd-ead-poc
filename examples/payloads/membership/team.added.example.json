@@ -1,0 +1,20 @@
+{
+  "resource": {
+    "kind": "repository",
+    "id": "gh:contoso/ci-templates",
+    "name": "ci-templates"
+  },
+  "team": {
+    "id": "github-team:12031",
+    "slug": "platform-engineering",
+    "name": "Platform Engineering"
+  },
+  "role": "maintain",
+  "addedBy": "github.team-sync",
+  "addedTimestamp": "2026-05-04T17:11:05Z",
+  "details": {
+    "provider": "github",
+    "organization": "contoso",
+    "syncJobId": "job-41f22"
+  }
+}
