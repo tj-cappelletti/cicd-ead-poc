@@ -1,0 +1,61 @@
+version: 1
+topics:
+  - name: "agent-sbt"
+    description: "Agent or runner instance lifecycle events"
+    owner: "cicd-tools"
+    serviceBusProperties:
+      maxSizeInMegabytes: 1024
+      requiresDuplicateDetection: true
+      duplicateDetectionHistoryTimeWindow: "24:00:00"
+      defaultMessageTimeToLive: "7.00:00:00"
+      enableBatchedOperations: true
+      enableExpress: false
+      enablePartitioning: false
+
+  - name: "automation-sbt"
+    description: "Automation run lifecycle events (started, completed, failed)"
+    owner: "cicd-tools"
+    serviceBusProperties:
+      maxSizeInMegabytes: 1024
+      requiresDuplicateDetection: true
+      duplicateDetectionHistoryTimeWindow: "24:00:00"
+      defaultMessageTimeToLive: "7.00:00:00"
+      enableBatchedOperations: true
+      enableExpress: false
+      enablePartitioning: false
+
+  - name: "autoscaler-sbt"
+    description: "Autoscaler pool scaling decision events"
+    owner: "cicd-tools"
+    serviceBusProperties:
+      maxSizeInMegabytes: 1024
+      requiresDuplicateDetection: true
+      duplicateDetectionHistoryTimeWindow: "24:00:00"
+      defaultMessageTimeToLive: "7.00:00:00"
+      enableBatchedOperations: true
+      enableExpress: false
+      enablePartitioning: false
+
+  - name: "membership-sbt"
+    description: "User and team membership lifecycle events across CI/CD tooling"
+    owner: "cicd-tools"
+    serviceBusProperties:
+      maxSizeInMegabytes: 1024
+      requiresDuplicateDetection: true
+      duplicateDetectionHistoryTimeWindow: "24:00:00"
+      defaultMessageTimeToLive: "7.00:00:00"
+      enableBatchedOperations: true
+      enableExpress: false
+      enablePartitioning: false
+
+  - name: "monitoring-sbt"
+    description: "Monitoring alerts and queue depth change events"
+    owner: "cicd-tools"
+    serviceBusProperties:
+      maxSizeInMegabytes: 1024
+      requiresDuplicateDetection: true
+      duplicateDetectionHistoryTimeWindow: "24:00:00"
+      defaultMessageTimeToLive: "7.00:00:00"
+      enableBatchedOperations: true
+      enableExpress: false
+      enablePartitioning: false
