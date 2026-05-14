@@ -1,0 +1,39 @@
+services:
+  sqledge:
+    image: "mcr.microsoft.com/azure-sql-edge:latest"
+    container_name: cicd-ead-sqledge
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "YourStrong!Passw0rd"
+    networks:
+      - ead-demo-net
+
+  servicebus-emulator:
+    image: "mcr.microsoft.com/azure-messaging/servicebus-emulator:latest"
+    container_name: cicd-ead-servicebus
+    environment:
+      SQL_SERVER: sqledge
+      MSSQL_SA_PASSWORD: "YourStrong!Passw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "5672:5672"
+    depends_on:
+      - sqledge
+    volumes:
+      - "./infrastructure/service-bus.config.json:/ServiceBus_Emulator/ConfigFiles/Config.json"
+    networks:
+      - ead-demo-net
+
+  azurite:
+    image: "mcr.microsoft.com/azure-storage/azurite:latest"
+    container_name: cicd-ead-azurite
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+    networks:
+      - ead-demo-net
+
+networks:
+  ead-demo-net:
+    driver: bridge
